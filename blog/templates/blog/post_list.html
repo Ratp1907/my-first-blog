@@ -7,13 +7,30 @@
 <div>
 	<h1>Estoy utilizando <a href=""> Django!</a></h1>
 </div>
-<div>
-	<h2>Pues ando probando el Html</h2>
-	<p>Pues lo he publicado hoy 7 de junio del 2017</p>
-</div>
+
 	
-	<div>
-		<h2><em>Avanzar al siguiente paso c:</em></h2>
-	</div>
+	{% for post in posts %}
+		<div>
+		
+			<p>published: {{ post.published_date }}</p>
+			<h1><a href="">{{ post.title }} </a> </h1>
+			<p>{{ post.text|linebreaksbr }}</p>
+
+
+		</div>
+
+	{% endfor %}
+	<!-- <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}-->
+
 </body>
 </html>
